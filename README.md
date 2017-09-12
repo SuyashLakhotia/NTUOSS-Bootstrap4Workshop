@@ -99,7 +99,7 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 ![task 1 screenshot](screenshots/task_0.png?raw=true)
 
 1. Open up `index.html` (inside `BootstrapWorkshop/`) in your preferred text editor.
-2. Open up `index.html` in your browser as well or use *Live Preview* if you're using Brackets.
+2. Open up `index.html` in your browser as well and remember to hit refresh whenever you make changes to the files. You can also use *Live Preview* if you're using Brackets and *atom-live-server* if you're using Atom so you don't have to keep refreshing every time.
 3. Replace the contents of `index.html` with the following:
 
 ```html
@@ -131,9 +131,9 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 </html>
 ```
 
-The above code links `index.html` to your custom CSS stylesheet, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js).
+The above code loads your custom stylesheet `custom.css`, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js) into `index.html`.
 
-**Note:** It is important to link your own CSS stylesheet after Bootstrap's if you wish to override any of the default classes.
+**Note:** It is important to link your own CSS stylesheet *after* Bootstrap's if you wish to override any of the default classes.
 
 ## Task 2 - The Grid System
 
@@ -141,7 +141,7 @@ If you've ever built your own website before, you know how much of a pain it can
 
 Bootstrap's grid system is made up of responsive rows & columns where each row has 12 columns. This allows you to layout any HTML element fairly easily. Let's try doing that for three paragraphs of text as an example.
 
-Insert the following before the `<script>` tags in `index.html`:
+In `index.html`, insert the following inside the `<body>` tag just before the `<script>` tags:
 
 ```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -155,10 +155,11 @@ Insert the following before the `<script>` tags in `index.html`:
 
 ### Containers
 
-The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of two containers:
 ![task 2b screenshot](screenshots/task_2b.png?raw=true)
 
-`.container` is a responsive fixed size container.
+The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of the two containers:
+
+`.container`  - responsive fixed size container
 
 ```html
 <div class="container">
@@ -166,7 +167,7 @@ The first thing we're going to do is wrap all the paragraphs in containers. Cont
 </div>
 ```
 
-`.container-fluid` is a full-width container that spans the entire width of the viewport.
+`.container-fluid` - full-width container that spans the entire width of the viewport (i.e. visible area of the browser)
 
 ```html
 <div class="container-fluid">
@@ -174,7 +175,7 @@ The first thing we're going to do is wrap all the paragraphs in containers. Cont
 </div>
 ```
 
-We'll be adding the `.container` class to add a slight margin to the sides:
+For this example, we'll be wrapping our paragraphs with a `<div>` of the `.container` class to add a modest margin to the sides:
 
 ```html
 <div class="container">
@@ -186,7 +187,7 @@ We'll be adding the `.container` class to add a slight margin to the sides:
 
 ### Rows & Columns
 
-The next step is to create a row inside the container, which will contain all the three paragraphs:
+The next step is to wrap our paragraphs with a `.row` inside `.container`:
 
 ```html
 <div class="container">
@@ -198,7 +199,7 @@ The next step is to create a row inside the container, which will contain all th
 </div>
 ```
 
-One thing to remember is that only columns should be immediate children of rows and content should be placed within these columns. So, let's create three columns of equal width for our paragraphs:
+One thing to remember is that only `.col` tags should be immediate children of `.row` tags and content should be placed within these columns. So, let's create three `.col` tags of equal width for our paragraphs:
 
 ```html
 <div class="container">
@@ -218,10 +219,10 @@ One thing to remember is that only columns should be immediate children of rows 
 
 What we have just done is assign 1/3 of large viewports to each paragraph by putting each paragraph in 4 columns out of a total of 12 columns. Try playing around with these numbers and see what happens but remember that the total number of columns in a row must not exceed 12.
 
-**Note:** `col-lg-*` will only take effect for large screens (i.e. >= 992px in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
 ![task 2c screenshot](screenshots/task_2c.png?raw=true)
 
 A shortcut for equal width columns is to simply leave the number blank i.e.:
+**Note:** `col-lg-*` will only take effect for large screens (i.e. `>= 992px` in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
 
 
 ```html
@@ -242,7 +243,9 @@ A shortcut for equal width columns is to simply leave the number blank i.e.:
 
 Bootstrap's grid system also comes with a variety of classes to better align columns vertically & horizontally within rows.
 
-Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` and see how it renders on the browser. Note that the `style` attribute has only been defined create a distinction between the different divs.
+Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` just right after your previous `.container` tag, before the `<script>` tags, and see how it renders on the browser.
+
+Note that the `style` attribute has only been defined to create a distinction between the different divs.
 
 ![task 2d screenshot](screenshots/task_2d.png?raw=true)
 
@@ -302,7 +305,7 @@ Vertical alignment can be achieved using a `align-items-*` class on the row or `
 </div>
 ```
 
-Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser. Note that the `style` attribute has only been defined to create a distinction between the different divs.
+Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser. Note again that the `style` attribute has only been defined to create a distinction between the different divs.
 
 ![task 2f screenshot](screenshots/task_2f.png?raw=true)
 
