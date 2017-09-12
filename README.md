@@ -135,6 +135,8 @@ The above code loads your custom stylesheet `custom.css`, Bootstrap's CSS & Java
 
 **Note:** It is important to link your own CSS stylesheet *after* Bootstrap's if you wish to override any of the default classes.
 
+> **PROTIP**<br>Although most tutorials online put the `<script>` tags inside `<head>`, it is often practiced by experienced developers to put these bad boys just before your closing `</body>` tag. The reason you'd want them at the end is that you want to make sure the page content loads first, speeding up the render and also avoiding unresponsive stalls due to downloading of larger scripts.
+
 ## Task 2 - The Grid System
 
 If you've ever built your own website before, you know how much of a pain it can be to make sure things are aligned correctly. Thankfully, Bootstrap has a simple solution to that problem called the [grid](https://getbootstrap.com/docs/4.0/layout/grid/).
@@ -152,6 +154,8 @@ In `index.html`, insert the following inside the `<body>` tag just before the `<
 ```
 
 ![task 2a screenshot](screenshots/task_2a.png?raw=true)
+
+> **PROTIP**<br>The famous *lorem ipsum* passage is simply the standard dummy text of the printing and typesetting industry (circa 1500s) and is widely adopted by today's modern designers and web developers to "fill-in" placeholder text that would otherwise be time consuming to write something intelligent. <br><br>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
 
 ### Containers
 
@@ -184,6 +188,8 @@ For this example, we'll be wrapping our paragraphs with a `<div>` of the `.conta
     <p>Lorem ipsum dolor...</p>
 </div>
 ```
+
+> **PROTIP**<br>Whenever nesting tags, it is important (although unnecessary) to indent your codes simply because they keep stuff readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline). Consider manually indenting by 2 spaces instead of 4 or 8. That way, you can save screen real estate, avoiding the dreaded horizontal scrolling.
 
 ### Rows & Columns
 
@@ -221,8 +227,9 @@ What we have just done is assign 1/3 of large viewports to each paragraph by put
 
 ![task 2c screenshot](screenshots/task_2c.png?raw=true)
 
-A shortcut for equal width columns is to simply leave the number blank i.e.:
 **Note:** `col-lg-*` will only take effect for large screens (i.e. `>= 992px` in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
+
+> **PROTIP**<br>A shortcut for equal width columns is to simply leave the number in `col-lg-X` blank:
 
 
 ```html
