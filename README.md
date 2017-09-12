@@ -260,35 +260,35 @@ Note that the `style` attribute has only been defined to create a distinction be
 <div class="container">
     <div class="row align-items-start" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
     </div>
     <div class="row align-items-center" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
     </div>
     <div class="row align-items-end" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
     </div>
 </div>
@@ -300,13 +300,16 @@ Note that the `style` attribute has only been defined to create a distinction be
 <div class="container">
     <div class="row" style="height: 200px; background-color: rgba(255,0,0,.1);">
         <div class="col align-self-start" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>First Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-center" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>Center Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-end" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>Last Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
 </div>
@@ -320,42 +323,42 @@ Horizontal alignment can be achieved using one of the `.justify-content-*` class
 <div class="container">
     <div class="row justify-content-start">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-end">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-around">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-between">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
 </div>
