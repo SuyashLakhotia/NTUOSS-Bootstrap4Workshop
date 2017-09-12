@@ -114,7 +114,7 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="custom.css">
 
     <title>Personal Website</title>
 </head>
