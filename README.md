@@ -96,7 +96,7 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 
 ## Task 1 - Setting Up Bootstrap
 
-![task 1 screenshot](screenshots/task_0.png?raw=true)
+![task 1 screenshot](screenshots/task_1.png?raw=true)
 
 1. Open up `index.html` (inside `BootstrapWorkshop/`) in your preferred text editor.
 2. Open up `index.html` in your browser as well and remember to hit refresh whenever you make changes to the files. You can also use *Live Preview* if you're using Brackets and *atom-live-server* if you're using Atom so you don't have to keep refreshing every time.
@@ -365,6 +365,8 @@ Horizontal alignment can be achieved using one of the `.justify-content-*` class
 ```
 
 ## Task 3 - Creating a Jumbotron
+
+![task 3 screenshot](screenshots/task_3.png?raw=true)
 
 Alright, now that we know how the grid system works, let's actually start building our personal website. The first thing we're going to do is add a nice-looking title for our personal website! Delete everything inside `<body>` except for the `<script>` tags and insert the following code:
 
