@@ -10,8 +10,8 @@ This workshop is based on Bootstrap v4.0.0-beta and assumes basic knowledge of H
 
 ### Workshop Details:
 
-**When?**: Friday, 15 Sept 2017. 6:30 PM - 8:30 PM.<br>
-**Where?**: Theatre@TheNest, Innovation Centre, Nanyang Technological University<br>
+**When?**: Friday, 15 Sept 2017. 6:30 PM - 8:30 PM.</br>
+**Where?**: Theatre@TheNest, Innovation Centre, Nanyang Technological University</br>
 **Who?**: NTU Open Source Society
 
 ### Questions?
@@ -28,7 +28,7 @@ If you find any mistake (typo or anything else), please make a pull request or [
 
 1. Download a text editor if you don't already have one. I would recommend either:
     1. [Atom](https://atom.io/)
-    2. [Sublime Text 2](http://www.sublimetext.com/2)
+    2. [Sublime Text 3](http://www.sublimetext.com/3)
     3. [Brackets](http://brackets.io/)
 2. Download [this project](https://github.com/SuyashLakhotia/NTUOSS-Bootstrap4Workshop/archive/master.zip) and unzip the file to get started.
 
@@ -96,10 +96,8 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 
 ## Task 1 - Setting Up Bootstrap
 
-![task 1 screenshot](screenshots/task_1.png?raw=true)
-
 1. Open up `index.html` (inside `BootstrapWorkshop/`) in your preferred text editor.
-2. Open up `index.html` in your browser as well and remember to hit refresh whenever you make changes to the files. You can also use *Live Preview* if you're using Brackets and *atom-live-server* if you're using Atom so you don't have to keep refreshing every time.
+2. Open up `index.html` in your browser as well (and remember to hit refresh whenever you make any changes). You can also use *Live Preview* if you're using Brackets or `atom-live-server` if you're using Atom so you don't have to keep refreshing every time.
 3. Replace the contents of `index.html` with the following:
 
 ```html
@@ -114,7 +112,7 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="custom.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <title>Personal Website</title>
 </head>
@@ -131,11 +129,12 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 </html>
 ```
 
-The above code loads your custom stylesheet `custom.css`, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js) into `index.html`.
+The code above loads your custom stylesheet `custom.css`, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js) into `index.html`.
 
 **Note:** It is important to link your own CSS stylesheet *after* Bootstrap's if you wish to override any of the default classes.
 
-> **PROTIP**<br>Although most tutorials online put the `<script>` tags inside `<head>`, it is often practiced by experienced developers to put these bad boys just before your closing `</body>` tag. The reason you'd want them at the end is that you want to make sure the page content loads first, speeding up the render and also avoiding unresponsive stalls due to downloading of larger scripts.
+> **PROTIP**</br>
+> Although most tutorials online put the `<script>` tags inside `<head>`, it is often practiced by experienced developers to put these bad boys just before your closing `</body>` tag. The reason you'd want them at the end is because you want to make sure the page content loads first, speeding up the render and also avoiding unresponsive stalls due to downloading of larger scripts.
 
 ## Task 2 - The Grid System
 
@@ -153,17 +152,20 @@ In `index.html`, insert the following inside the `<body>` tag just before the `<
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 ```
 
-![task 2a screenshot](screenshots/task_2a.png?raw=true)
+![Task 2A Screenshot](screenshots/task_2a.png?raw=true)
 
-> **PROTIP**<br>The famous *lorem ipsum* passage is simply the standard dummy text of the printing and typesetting industry (circa 1500s) and is widely adopted by today's modern designers and web developers to "fill-in" placeholder text that would otherwise be time consuming to write something intelligent. <br><br>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+> **PROTIP**</br>
+> The famous *lorem ipsum* passage is simply the standard dummy text of the printing and typesetting industry (circa 1500s) and is widely adopted by today's modern designers and web developers to "fill-in" placeholder text that would otherwise be time consuming to write something intelligent.
+>
+> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'content here, content here...', making it look like readable English.
 
 ### Containers
 
-![task 2b screenshot](screenshots/task_2b.png?raw=true)
+![Task 2B Screenshot](screenshots/task_2b.png?raw=true)
 
 The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of the two containers:
 
-`.container`  - responsive fixed size container
+`.container` is a responsive fixed size container.
 
 ```html
 <div class="container">
@@ -171,7 +173,7 @@ The first thing we're going to do is wrap all the paragraphs in containers. Cont
 </div>
 ```
 
-`.container-fluid` - full-width container that spans the entire width of the viewport (i.e. visible area of the browser)
+`.container-fluid` is a full-width container that spans the entire width of the viewport (i.e. visible area of the browser).
 
 ```html
 <div class="container-fluid">
@@ -189,11 +191,12 @@ For this example, we'll be wrapping our paragraphs with a `<div>` of the `.conta
 </div>
 ```
 
-> **PROTIP**<br>Whenever nesting tags, it is important to indent your codes simply because they keep stuff readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline). Also, consider indenting by 2 spaces instead of 4 or 8. That way, you can save screen real estate, avoiding the dreaded horizontal scrolling.
+> **PROTIP**</br>
+> Whenever you're nesting tags, it is important to indent your code because indentation keeps things readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline).
 
 ### Rows & Columns
 
-The next step is to wrap our paragraphs with a `.row` inside `.container`:
+The next step is to create a row (`.row`) inside the container (`.container`), which will contain the three paragraphs:
 
 ```html
 <div class="container">
@@ -205,7 +208,7 @@ The next step is to wrap our paragraphs with a `.row` inside `.container`:
 </div>
 ```
 
-One thing to remember is that only `.col` tags should be immediate children of `.row` tags and content should be placed within these columns. So, let's create three `.col` tags of equal width for our paragraphs:
+One thing to remember is that only columns should be immediate children of rows and content should be placed within these columns. So, let's create three columns of equal width for our paragraphs using the `.col-*-*` class:
 
 ```html
 <div class="container">
@@ -225,12 +228,12 @@ One thing to remember is that only `.col` tags should be immediate children of `
 
 What we have just done is assign 1/3 of large viewports to each paragraph by putting each paragraph in 4 columns out of a total of 12 columns. Try playing around with these numbers and see what happens but remember that the total number of columns in a row must not exceed 12.
 
-![task 2c screenshot](screenshots/task_2c.png?raw=true)
+![Task 2C Screenshot](screenshots/task_2c.png?raw=true)
 
 **Note:** `col-lg-*` will only take effect for large screens (i.e. `>= 992px` in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
 
-> **PROTIP**<br>A shortcut for equal width columns is to simply leave the number in `col-lg-X` blank:
-
+> **PROTIP**</br>
+> A shortcut for equal width columns is to simply leave the number in `col-lg-*` blank, like below.
 
 ```html
 <div class="row">
@@ -250,11 +253,11 @@ What we have just done is assign 1/3 of large viewports to each paragraph by put
 
 Bootstrap's grid system also comes with a variety of classes to better align columns vertically & horizontally within rows.
 
-Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` just right after your previous `.container` tag, before the `<script>` tags, and see how it renders on the browser.
+Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` just right after your previous `.container` div, before the `<script>` tags, and see how it renders on the browser.
 
 Note that the `style` attribute has only been defined to create a distinction between the different divs.
 
-![task 2d screenshot](screenshots/task_2d.png?raw=true)
+![Task 2D Screenshot](screenshots/task_2d.png?raw=true)
 
 ```html
 <div class="container">
@@ -294,7 +297,7 @@ Note that the `style` attribute has only been defined to create a distinction be
 </div>
 ```
 
-![task 2e screenshot](screenshots/task_2e.png?raw=true)
+![Task 2E Screenshot](screenshots/task_2e.png?raw=true)
 
 ```html
 <div class="container">
@@ -315,12 +318,14 @@ Note that the `style` attribute has only been defined to create a distinction be
 </div>
 ```
 
-Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser. Note again that the `style` attribute has only been defined to create a distinction between the different divs.
+Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser.
 
-![task 2f screenshot](screenshots/task_2f.png?raw=true)
+Note again that the `style` attribute has only been defined to create a distinction between the different divs.
+
+![Task 2F Screenshot](screenshots/task_2f.png?raw=true)
 
 ```html
-<div class="container" style="height: 600px">
+<div class="container" style="height: 200px">
     <div class="row justify-content-start">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
@@ -366,7 +371,7 @@ Horizontal alignment can be achieved using one of the `.justify-content-*` class
 
 ## Task 3 - Creating a Jumbotron
 
-![task 3 screenshot](screenshots/task_3.png?raw=true)
+![Task 3 Screenshot](screenshots/task_3.png?raw=true)
 
 Alright, now that we know how the grid system works, let's actually start building our personal website. The first thing we're going to do is add a nice-looking title for our personal website! Delete everything inside `<body>` except for the `<script>` tags and insert the following code:
 
@@ -386,7 +391,8 @@ Wrap the code inside a `<div>`. Most Bootstrap layout classes are applied to con
 </div>
 ```
 
-> **PROTIP**<br>When organising your tags, be mindful how often and for what reason you're wrapping those tags with a `<div>` as it can lead to a very serious case of what web developers call *divitis*. Divitis refers to the over-use of the `<div>` tag for purposes other than what it's originally meant to do: *dividing* a page into meaningful sections. To avoid contracting the disease, consider fully whether a container `<div>` is really necessary, make full use of available HTML tags + CSS selectors, and if all else fails, reconsider your design choices.
+> **PROTIP**</br>
+> When organizing your tags, be mindful how often and for what reason you're wrapping those tags with a `<div>` as it can lead to a very serious case of what web developers call *divitis*. Divitis refers to the over-use of the `<div>` tag for purposes other than what it's originally meant to do: *dividing* a page into meaningful sections. To avoid contracting the disease, consider fully whether a container `<div>` is really necessary, make full use of available HTML tags + CSS selectors, and if all else fails, reconsider your design choices.
 
 Let's assign the `.jumbotron` & `.jumbotron-fluid` class to the `.div`. Just like that, Bootstrap allows you to make a pretty appealing title for your page.
 
@@ -409,7 +415,8 @@ Now, let's add some typography classes and change the tags to make our title loo
 
 Let's go ahead and add a photo of ourself to the website. The first thing to do is to actually copy the image file and place it under a new directory `img/` and rename the file to `avatar.jpg`. If your image is a different format or in another directory, make sure to change the `src` attribute accordingly.
 
-> **PROTIP**<br>Understanding the difference between relative and absolute file paths is very important when referencing external files. A *relative file path*, as per the example provided, references the location of a file with respect to the current directory (where our `index.html` resides) while an *absolute file path in all respects* on the other hand references the location of a file with respect to the root directory of your system if running on localhost (ex. `src="/usr/xx/yy/kitten.png"`) or together with the complete url (ex. `src="http://www.foo.com/img/kitten.png"`)
+> **PROTIP**</br>
+> Understanding the difference between relative and absolute file paths is very important when referencing external files. A *relative file path*, as per the example provided, references the location of a file with respect to the current directory (where our `index.html` resides) while an *absolute file path* on the other hand references the location of a file with respect to the root directory of your system (e.g. `src="/usr/xx/yy/kitten.png"`) or together with the complete url (e.g. `src="http://www.foo.com/img/kitten.png"`)
 
 Once we've copied the image, we can place it in a row right after the jumbotron:
 
