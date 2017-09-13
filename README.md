@@ -298,7 +298,7 @@ Note that the `style` attribute has only been defined to create a distinction be
 
 ```html
 <div class="container">
-    <div class="row" style="height: 200px; background-color: rgba(255,0,0,.1);">
+    <div class="row" style="height: 600px; background-color: rgba(255,0,0,.1);">
         <div class="col align-self-start" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
             <h3>First Column Content</h3>
             <p>Lorem ipsum dolor...</p>
@@ -320,7 +320,7 @@ Horizontal alignment can be achieved using one of the `.justify-content-*` class
 ![task 2f screenshot](screenshots/task_2f.png?raw=true)
 
 ```html
-<div class="container">
+<div class="container" style="height: 600px">
     <div class="row justify-content-start">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
