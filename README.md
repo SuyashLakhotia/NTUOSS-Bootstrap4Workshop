@@ -189,7 +189,7 @@ For this example, we'll be wrapping our paragraphs with a `<div>` of the `.conta
 </div>
 ```
 
-> **PROTIP**<br>Whenever nesting tags, it is important (although unnecessary) to indent your codes simply because they keep stuff readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline). Consider manually indenting by 2 spaces instead of 4 or 8. That way, you can save screen real estate, avoiding the dreaded horizontal scrolling.
+> **PROTIP**<br>Whenever nesting tags, it is important to indent your codes simply because they keep stuff readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline). Also, consider indenting by 2 spaces instead of 4 or 8. That way, you can save screen real estate, avoiding the dreaded horizontal scrolling.
 
 ### Rows & Columns
 
@@ -386,7 +386,9 @@ Wrap the code inside a `<div>`. Most Bootstrap layout classes are applied to con
 </div>
 ```
 
-Let's assign the `.jumbotron` & `.jumbotron-fluid` class to the div. Just like that, Bootstrap allows you to make a pretty appealing title for your page.
+> **PROTIP**<br>When organising your tags, be mindful how often and for what reason you're wrapping those tags with a `<div>` as it can lead to a very serious case of what web developers call *divitis*. Divitis refers to the over-use of the `<div>` tag for purposes other than what it's originally meant to do: *dividing* a page into meaningful sections. To avoid contracting the disease, consider fully whether a container `<div>` is really necessary, make full use of available HTML tags + CSS selectors, and if all else fails, reconsider your design choices.
+
+Let's assign the `.jumbotron` & `.jumbotron-fluid` class to the `.div`. Just like that, Bootstrap allows you to make a pretty appealing title for your page.
 
 ```html
 <div class="jumbotron jumbotron-fluid">
@@ -406,6 +408,8 @@ Now, let's add some typography classes and change the tags to make our title loo
 ## Task 4 - Images
 
 Let's go ahead and add a photo of ourself to the website. The first thing to do is to actually copy the image file and place it under a new directory `img/` and rename the file to `avatar.jpg`. If your image is a different format or in another directory, make sure to change the `src` attribute accordingly.
+
+> **PROTIP**<br>Understanding the difference between relative and absolute file paths is very important when referencing external files. A *relative file path*, as per the example provided, references the location of a file with respect to the current directory (where our `index.html` resides) while an *absolute file path in all respects* on the other hand references the location of a file with respect to the root directory of your system if running on localhost (ex. `src="/usr/xx/yy/kitten.png"`) or together with the complete url (ex. `src="http://www.foo.com/img/kitten.png"`)
 
 Once we've copied the image, we can place it in a row right after the jumbotron:
 
