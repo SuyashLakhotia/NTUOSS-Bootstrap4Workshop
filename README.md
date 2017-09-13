@@ -142,7 +142,7 @@ If you've ever built your own website before, you know how much of a pain it can
 
 Bootstrap's grid system is made up of responsive rows & columns where each row has 12 columns. This allows you to layout any HTML element fairly easily. Let's try doing that for three paragraphs of text as an example.
 
-In `index.html`, insert the following inside the `<body>` tag just before the `<script>` tags:
+In `index.html`, delete Line 18 and insert the following inside the `<body>` tag just before the `<script>` tags:
 
 ```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -152,7 +152,7 @@ In `index.html`, insert the following inside the `<body>` tag just before the `<
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 ```
 
-![Task 2A Screenshot](screenshots/task_2a.png?raw=true)
+![Task 2A Screenshot](screenshots/Task_2A.png)
 
 > **PROTIP**</br>
 > The famous *lorem ipsum* passage is simply the standard dummy text of the printing and typesetting industry (circa 1500s) and is widely adopted by today's modern designers and web developers to "fill-in" placeholder text that would otherwise be time consuming to write something intelligent.
@@ -161,7 +161,7 @@ In `index.html`, insert the following inside the `<body>` tag just before the `<
 
 ### Containers
 
-![Task 2B Screenshot](screenshots/task_2b.png?raw=true)
+![Task 2B Screenshot](screenshots/Task_2B.png)
 
 The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of the two containers:
 
@@ -228,7 +228,7 @@ One thing to remember is that only columns should be immediate children of rows 
 
 What we have just done is assign 1/3 of large viewports to each paragraph by putting each paragraph in 4 columns out of a total of 12 columns. Try playing around with these numbers and see what happens but remember that the total number of columns in a row must not exceed 12.
 
-![Task 2C Screenshot](screenshots/task_2c.png?raw=true)
+![Task 2C Screenshot](screenshots/Task_2C.png)
 
 **Note:** `col-lg-*` will only take effect for large screens (i.e. `>= 992px` in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
 
@@ -257,11 +257,11 @@ Vertical alignment can be achieved using a `align-items-*` class on the row or `
 
 Note that the `style` attribute has only been defined to create a distinction between the different divs.
 
-![Task 2D Screenshot](screenshots/task_2d.png?raw=true)
+![Task 2D Screenshot](screenshots/Task_2D.png)
 
 ```html
 <div class="container">
-    <div class="row align-items-start" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
+    <div class="row align-items-start" style="height: 200px; background-color: rgba(0,0,255,.1); border: 1px solid #000;">
         <div class="col">
           <p>I am vertically aligned to the start!</p>
         </div>
@@ -272,7 +272,7 @@ Note that the `style` attribute has only been defined to create a distinction be
           <p>I am vertically aligned to the start!</p>
         </div>
     </div>
-    <div class="row align-items-center" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
+    <div class="row align-items-center" style="height: 200px; background-color: rgba(0,0,255,.1); border: 1px solid #000;">
         <div class="col">
           <p>I am vertically aligned to the center!</p>
         </div>
@@ -283,7 +283,7 @@ Note that the `style` attribute has only been defined to create a distinction be
           <p>I am vertically aligned to the center!</p>
         </div>
     </div>
-    <div class="row align-items-end" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
+    <div class="row align-items-end" style="height: 200px; background-color: rgba(0,0,255,.1); border: 1px solid #000;">
         <div class="col">
             <p>I am vertically aligned to the end!</p>
         </div>
@@ -297,21 +297,21 @@ Note that the `style` attribute has only been defined to create a distinction be
 </div>
 ```
 
-![Task 2E Screenshot](screenshots/task_2e.png?raw=true)
+![Task 2E Screenshot](screenshots/Task_2E.png)
 
 ```html
 <div class="container">
-    <div class="row" style="height: 600px; background-color: rgba(255,0,0,.1);">
+    <div class="row" style="height: 400px; background-color: rgba(255,0,0,.1);">
         <div class="col align-self-start" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
             <h3>First Column Content</h3>
             <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-center" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            <h3>Center Column Content</h3>
+            <h3>Second Column Content</h3>
             <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-end" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            <h3>Last Column Content</h3>
+            <h3>Third Column Content</h3>
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
@@ -322,47 +322,47 @@ Horizontal alignment can be achieved using one of the `.justify-content-*` class
 
 Note again that the `style` attribute has only been defined to create a distinction between the different divs.
 
-![Task 2F Screenshot](screenshots/task_2f.png?raw=true)
+![Task 2F Screenshot](screenshots/Task_2F.png)
 
 ```html
-<div class="container" style="height: 200px">
+<div class="container">
     <div class="row justify-content-start">
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-end">
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-around">
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-between">
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
-        <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
+        <div class="col-4" style="background-color: rgba(0,0,255,.1); border: 1px solid #000;">
             <p>Lorem ipsum dolor...</p>
         </div>
     </div>
@@ -371,7 +371,7 @@ Note again that the `style` attribute has only been defined to create a distinct
 
 ## Task 3 - Creating a Jumbotron
 
-![Task 3 Screenshot](screenshots/task_3.png?raw=true)
+![Task 3 Screenshot](screenshots/Task_3.png)
 
 Alright, now that we know how the grid system works, let's actually start building our personal website. The first thing we're going to do is add a nice-looking title for our personal website! Delete everything inside `<body>` except for the `<script>` tags and insert the following code:
 
@@ -413,6 +413,8 @@ Now, let's add some typography classes and change the tags to make our title loo
 
 ## Task 4 - Images
 
+![Task 4 Screenshot](screenshots/Task_4.png)
+
 Let's go ahead and add a photo of ourself to the website. The first thing to do is to actually copy the image file and place it under a new directory `img/` and rename the file to `avatar.jpg`. If your image is a different format or in another directory, make sure to change the `src` attribute accordingly.
 
 > **PROTIP**</br>
@@ -439,6 +441,8 @@ In addition to the `.img-fluid` class, Bootstrap also offers the following class
 3. `.rounded-circle`: Crops the image into a circle.
 
 ## Task 5 - Spacing Classes
+
+![Task 5 Screenshot](screenshots/Task_5.png)
 
 Now that we have our photo on the website, let's add a quick description right below the image in another row:
 
@@ -471,6 +475,8 @@ Looks like the image and text may be too close together, let's fix that by addin
 You can find out more about the available spacing classes [here](https://getbootstrap.com/docs/4.0/utilities/spacing/).
 
 ## Task 6 - Cards
+
+![Task 6 Screenshot](screenshots/Task_6.png)
 
 The next thing we're going to do is add a few cards to showcase projects we've done. Cards are flexible content containers and an extremely popular modern web design tool.
 
@@ -505,20 +511,22 @@ Let's add a deck of three cards right after our paragraph of text:
 
 As you can see, cards usually have `.card-title` & `.card-text` in their `.card-body` and may also have a header (i.e. `card-header`) or footer (i.e. `.card-footer`). We can also add a splash of color to our cards by adding any of the following classes to the `.card` div:
 
-- `bg-primary`
-- `bg-secondary`
-- `bg-success`
-- `bg-danger`
-- `bg-warning`
-- `bg-info`
-- `bg-light`
-- `bg-dark`
+- `.bg-primary`
+- `.bg-secondary`
+- `.bg-success`
+- `.bg-danger`
+- `.bg-warning`
+- `.bg-info`
+- `.bg-light`
+- `.bg-dark`
 
 It is important to add the `.text-white` class if you're choosing a darker color as the background.
 
 Cards are extremely flexible and have many more features that aren't covered here. To find out more, check out the documentation [here](https://getbootstrap.com/docs/4.0/components/card/).
 
 ## Task 7 - Buttons
+
+![Task 7 Screenshot](screenshots/Task_7.png)
 
 Bootstrap comes with various button styles that can be implemented extremely easily. Let's add a button to one of our cards:
 
@@ -533,19 +541,21 @@ Bootstrap comes with various button styles that can be implemented extremely eas
 
 Again, Bootstrap comes with default classes that can be used to add a splash of color. Feel free to play around with them:
 
-- `btn-primary`
-- `btn-secondary`
-- `btn-success`
-- `btn-danger`
-- `btn-warning`
-- `btn-info`
-- `btn-light`
-- `btn-dark`
-- `btn-link`
+- `.btn-primary`
+- `.btn-secondary`
+- `.btn-success`
+- `.btn-danger`
+- `.btn-warning`
+- `.btn-info`
+- `.btn-light`
+- `.btn-dark`
+- `.btn-link`
 
 You can find out more about Bootstrap buttons [here](https://getbootstrap.com/docs/4.0/components/buttons/).
 
 ## Task 8 - Navbar
+
+![Task 8 Screenshot](screenshots/Task_8.png)
 
 A navbar is a great way to navigate around websites or even a single web page. Bootstrap offers a fairly simple way to implement a navbar. Copy the following lines into `index.html` right above the jumbotron:
 
