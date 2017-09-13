@@ -96,8 +96,10 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 
 ## Task 1 - Setting Up Bootstrap
 
+![task 1 screenshot](screenshots/task_1.png?raw=true)
+
 1. Open up `index.html` (inside `BootstrapWorkshop/`) in your preferred text editor.
-2. Open up `index.html` in your browser as well or use *Live Preview* if you're using Brackets.
+2. Open up `index.html` in your browser as well and remember to hit refresh whenever you make changes to the files. You can also use *Live Preview* if you're using Brackets and *atom-live-server* if you're using Atom so you don't have to keep refreshing every time.
 3. Replace the contents of `index.html` with the following:
 
 ```html
@@ -112,7 +114,7 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="custom.css">
 
     <title>Personal Website</title>
 </head>
@@ -129,9 +131,11 @@ Each style rule consists of a selector (e.g. `h1` or `.some-class`) followed by 
 </html>
 ```
 
-The above code links `index.html` to your custom CSS stylesheet, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js).
+The above code loads your custom stylesheet `custom.css`, Bootstrap's CSS & JavaScript as well as Bootstrap's JavaScript dependencies (jQuery & Popper.js) into `index.html`.
 
-**Note:** It is important to link your own CSS stylesheet after Bootstrap's if you wish to override any of the default classes.
+**Note:** It is important to link your own CSS stylesheet *after* Bootstrap's if you wish to override any of the default classes.
+
+> **PROTIP**<br>Although most tutorials online put the `<script>` tags inside `<head>`, it is often practiced by experienced developers to put these bad boys just before your closing `</body>` tag. The reason you'd want them at the end is that you want to make sure the page content loads first, speeding up the render and also avoiding unresponsive stalls due to downloading of larger scripts.
 
 ## Task 2 - The Grid System
 
@@ -139,7 +143,7 @@ If you've ever built your own website before, you know how much of a pain it can
 
 Bootstrap's grid system is made up of responsive rows & columns where each row has 12 columns. This allows you to layout any HTML element fairly easily. Let's try doing that for three paragraphs of text as an example.
 
-Insert the following before the `<script>` tags in `index.html`:
+In `index.html`, insert the following inside the `<body>` tag just before the `<script>` tags:
 
 ```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -149,11 +153,17 @@ Insert the following before the `<script>` tags in `index.html`:
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 ```
 
+![task 2a screenshot](screenshots/task_2a.png?raw=true)
+
+> **PROTIP**<br>The famous *lorem ipsum* passage is simply the standard dummy text of the printing and typesetting industry (circa 1500s) and is widely adopted by today's modern designers and web developers to "fill-in" placeholder text that would otherwise be time consuming to write something intelligent. <br><br>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
 ### Containers
 
-The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of two containers:
+![task 2b screenshot](screenshots/task_2b.png?raw=true)
 
-`.container` is a responsive fixed size container.
+The first thing we're going to do is wrap all the paragraphs in containers. Containers are the most basic layout element in Bootstrap and are required when using the default grid system. You may choose one of the two containers:
+
+`.container`  - responsive fixed size container
 
 ```html
 <div class="container">
@@ -161,7 +171,7 @@ The first thing we're going to do is wrap all the paragraphs in containers. Cont
 </div>
 ```
 
-`.container-fluid` is a full-width container that spans the entire width of the viewport.
+`.container-fluid` - full-width container that spans the entire width of the viewport (i.e. visible area of the browser)
 
 ```html
 <div class="container-fluid">
@@ -169,7 +179,7 @@ The first thing we're going to do is wrap all the paragraphs in containers. Cont
 </div>
 ```
 
-We'll be adding the `.container` class to add a slight margin to the sides:
+For this example, we'll be wrapping our paragraphs with a `<div>` of the `.container` class to add a modest margin to the sides:
 
 ```html
 <div class="container">
@@ -179,9 +189,11 @@ We'll be adding the `.container` class to add a slight margin to the sides:
 </div>
 ```
 
+> **PROTIP**<br>Whenever nesting tags, it is important to indent your codes simply because they keep stuff readable. Most modern text editors should come with a *beautify* feature that automatically does this for you (sometimes intuitively as you enter a newline). Also, consider indenting by 2 spaces instead of 4 or 8. That way, you can save screen real estate, avoiding the dreaded horizontal scrolling.
+
 ### Rows & Columns
 
-The next step is to create a row inside the container, which will contain all the three paragraphs:
+The next step is to wrap our paragraphs with a `.row` inside `.container`:
 
 ```html
 <div class="container">
@@ -193,7 +205,7 @@ The next step is to create a row inside the container, which will contain all th
 </div>
 ```
 
-One thing to remember is that only columns should be immediate children of rows and content should be placed within these columns. So, let's create three columns of equal width for our paragraphs:
+One thing to remember is that only `.col` tags should be immediate children of `.row` tags and content should be placed within these columns. So, let's create three `.col` tags of equal width for our paragraphs:
 
 ```html
 <div class="container">
@@ -213,9 +225,11 @@ One thing to remember is that only columns should be immediate children of rows 
 
 What we have just done is assign 1/3 of large viewports to each paragraph by putting each paragraph in 4 columns out of a total of 12 columns. Try playing around with these numbers and see what happens but remember that the total number of columns in a row must not exceed 12.
 
-**Note:** `col-lg-*` will only take effect for large screens (i.e. >= 992px in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
+![task 2c screenshot](screenshots/task_2c.png?raw=true)
 
-A shortcut for equal width columns is to simply leave the number blank i.e.:
+**Note:** `col-lg-*` will only take effect for large screens (i.e. `>= 992px` in width) so the same website on mobile will render the paragraphs in separate rows (which is fine since they would be really close together and impossible to read otherwise). In order to specify different column widths for different screen sizes, Bootstrap provides (in increasing order of screen width) `col-*`, `col-sm-*`, `col-md-*`, `col-lg-*` & `col-xl-*` classes. You can find out more [here](https://getbootstrap.com/docs/4.0/layout/grid/#grid-options).
+
+> **PROTIP**<br>A shortcut for equal width columns is to simply leave the number in `col-lg-X` blank:
 
 
 ```html
@@ -236,110 +250,123 @@ A shortcut for equal width columns is to simply leave the number blank i.e.:
 
 Bootstrap's grid system also comes with a variety of classes to better align columns vertically & horizontally within rows.
 
-Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` and see how it renders on the browser. Note that the `style` attribute has only been defined create a distinction between the different divs.
+Vertical alignment can be achieved using a `align-items-*` class on the row or `align-self-*` classes on each column. Copy the following pieces of code into `index.html` just right after your previous `.container` tag, before the `<script>` tags, and see how it renders on the browser.
+
+Note that the `style` attribute has only been defined to create a distinction between the different divs.
+
+![task 2d screenshot](screenshots/task_2d.png?raw=true)
 
 ```html
 <div class="container">
     <div class="row align-items-start" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the start!</p>
         </div>
     </div>
     <div class="row align-items-center" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
         <div class="col">
-            Column Content
+          <p>I am vertically aligned to the center!</p>
         </div>
     </div>
     <div class="row align-items-end" style="height: 200px; background-color: rgba(255,0,0,.1); border: 1px solid #000;">
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
         <div class="col">
-            Column Content
+            <p>I am vertically aligned to the end!</p>
         </div>
     </div>
 </div>
 ```
 
+![task 2e screenshot](screenshots/task_2e.png?raw=true)
+
 ```html
 <div class="container">
-    <div class="row" style="height: 200px; background-color: rgba(255,0,0,.1);">
+    <div class="row" style="height: 600px; background-color: rgba(255,0,0,.1);">
         <div class="col align-self-start" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>First Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-center" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>Center Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col align-self-end" style="background-color: rgba(86,61,124,.15); border: 1px solid 1px solid rgba(86,61,124,.2);">
-            Column Content
+            <h3>Last Column Content</h3>
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
 </div>
 ```
 
-Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser. Note that the `style` attribute has only been defined to create a distinction between the different divs.
+Horizontal alignment can be achieved using one of the `.justify-content-*` classes on the row. Copy the following piece of code into `index.html` and see how it renders on the browser. Note again that the `style` attribute has only been defined to create a distinction between the different divs.
+
+![task 2f screenshot](screenshots/task_2f.png?raw=true)
 
 ```html
-<div class="container">
+<div class="container" style="height: 600px">
     <div class="row justify-content-start">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-end">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-around">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
     <div class="row justify-content-between">
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
         <div class="col-4" style="background-color: #eee; border: 1px solid #000;">
-            Column Content
+            <p>Lorem ipsum dolor...</p>
         </div>
     </div>
 </div>
 ```
 
 ## Task 3 - Creating a Jumbotron
+
+![task 3 screenshot](screenshots/task_3.png?raw=true)
 
 Alright, now that we know how the grid system works, let's actually start building our personal website. The first thing we're going to do is add a nice-looking title for our personal website! Delete everything inside `<body>` except for the `<script>` tags and insert the following code:
 
@@ -359,7 +386,9 @@ Wrap the code inside a `<div>`. Most Bootstrap layout classes are applied to con
 </div>
 ```
 
-Let's assign the `.jumbotron` & `.jumbotron-fluid` class to the div. Just like that, Bootstrap allows you to make a pretty appealing title for your page.
+> **PROTIP**<br>When organising your tags, be mindful how often and for what reason you're wrapping those tags with a `<div>` as it can lead to a very serious case of what web developers call *divitis*. Divitis refers to the over-use of the `<div>` tag for purposes other than what it's originally meant to do: *dividing* a page into meaningful sections. To avoid contracting the disease, consider fully whether a container `<div>` is really necessary, make full use of available HTML tags + CSS selectors, and if all else fails, reconsider your design choices.
+
+Let's assign the `.jumbotron` & `.jumbotron-fluid` class to the `.div`. Just like that, Bootstrap allows you to make a pretty appealing title for your page.
 
 ```html
 <div class="jumbotron jumbotron-fluid">
@@ -379,6 +408,8 @@ Now, let's add some typography classes and change the tags to make our title loo
 ## Task 4 - Images
 
 Let's go ahead and add a photo of ourself to the website. The first thing to do is to actually copy the image file and place it under a new directory `img/` and rename the file to `avatar.jpg`. If your image is a different format or in another directory, make sure to change the `src` attribute accordingly.
+
+> **PROTIP**<br>Understanding the difference between relative and absolute file paths is very important when referencing external files. A *relative file path*, as per the example provided, references the location of a file with respect to the current directory (where our `index.html` resides) while an *absolute file path in all respects* on the other hand references the location of a file with respect to the root directory of your system if running on localhost (ex. `src="/usr/xx/yy/kitten.png"`) or together with the complete url (ex. `src="http://www.foo.com/img/kitten.png"`)
 
 Once we've copied the image, we can place it in a row right after the jumbotron:
 
