@@ -10,9 +10,9 @@ This workshop is based on Bootstrap v4.0.0-beta and assumes basic knowledge of H
 
 ### Workshop Details:
 
-**When?**: Friday, 15 Sept 2017. 6:30 PM - 8:30 PM.</br>
-**Where?**: Theatre@TheNest, Innovation Centre, Nanyang Technological University</br>
-**Who?**: NTU Open Source Society
+**When?** Friday, 15 Sept 2017. 6:30 PM - 8:30 PM.</br>
+**Where?** Theatre@TheNest, Innovation Centre, Nanyang Technological University</br>
+**Who?** NTU Open Source Society
 
 ### Questions?
 
